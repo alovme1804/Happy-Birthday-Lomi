@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Salome!</title>
+    <link rel="stylesheet" href="gaya.css" />
+    <link
+      rel="shortcut icon"
+      href="Happy_Birthday_Salome_Cake.png"
+      type="image/x-icon"
+    />
+    <style>
+      /* CSS Inline untuk tombol */
+      .center-bottom {
+        position: relative;
+        top: 10px;
+        left: 44.8%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        border: 1px solid #d94747;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 3.8cm;
+        font-size: 1em;
+        z-index: 2;
+      }
+
+      .center-bottom:hover {
+        background-color: #d94747;
+      }
+
+      /* Transisi untuk efek buka/tutup buku */
+      .birthday-card.open .cover-outer {
+        transform: perspective(800px) rotateY(-170deg);
+      }
+
+      .birthday-card.open .cover-inner {
+        transform: perspective(800px) rotateY(-170deg);
+        box-shadow: 7px 0 5px 0 rgba(0, 0, 0, 0.3),
+          inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .center-bottom {
+          left: 31.1%;
+        }
+        .birthday-card{
+          margin: 30px auto 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="book" class="birthday-card">
+      <!-- Inner -->
+      <div class="cover-inner">
+        <img src="cv-inner.png" width="100%" />
+      </div>
+
+      <!-- Outer -->
+      <div class="cover-outer">
+        <img src="cv-outer.png" width="100%" />
+      </div>
+
+      <!-- Text -->
+      <div class="text">
+        <p class="title">
+          Sweet Seventheen
+          Lomi!!! 🎉
+        </p>
+        <p>
+          There are so many things I want to say, but sometimes words feel inadequate to express how much you mean to me. Thank you for being such a special person. I feel incredibly lucky to have met you, and I’m truly grateful to know someone as kind and warm-hearted as you.
+
+In every moment we share, I find happiness, comfort, and inspiration. You are someone who always brings color to my days, and your presence makes everything feel more beautiful and meaningful.
+
+On your special day, I want you to know that my prayers are always with you. I hope all your dreams come true, that you stay healthy, and that you are always surrounded by love and happiness. May each step you take be blessed, and may you continue to grow into an even stronger and wiser person.
+
+I hope your 17th year treats you better than your 16th did. I wish for your journey this year to be filled with experiences that bring joy and valuable lessons. You’ve overcome so much, and I believe you’ll face this year with incredible courage and enthusiasm.
+
+I’m proud of you, truly proud of everything you’ve been through. Continue to be yourself; you are truly extraordinary, and I hope you recognize how amazing you are. Remember to always take care of yourself and your health, as it is the most important thing. Don’t forget to give yourself time to rest and enjoy every moment.
+
+Stay motivated, Lomii! I know that whatever you face, you will be able to overcome it with the bravery and resilience you’ve shown. Never doubt yourself, because you have extraordinary potential. I’ll always be here to support you, and I believe your future will be filled with happiness and success.
+
+I can never stop being grateful for all the love, laughter, and adventures we’ve shared together. Every memory we’ve created will always be a cherished part of my life. You will always have a special place in my heart, and I hope that one day I can meet you, I love you to the moon and never back. Happy Birthday Lomi! May it be as special as you are.
+        </p>
+        <!-- <p>Hope your day goes great!</p> -->
+      </div>
+
+      <!-- Audio -->
+      <audio autoplay>
+        <source src="Christina Perri - A Thousand Years.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+
+    <!-- Tombol -->
+    <div class="button">
+      <!-- Tombol untuk membuka/menutup buku -->
+      <button id="toggleBook" class="center-bottom">Open Book</button>
+      <!-- Tombol untuk kembali -->
+      <a href="index.html" style="text-decoration: none; color: black">
+        <button class="center-bottom">Back</button>
+      </a>
+    </div>
+
+    <script>
+      document
+        .getElementById("toggleBook")
+        .addEventListener("click", function () {
+          var book = document.getElementById("book");
+          var button = document.getElementById("toggleBook");
+          if (book.classList.contains("open")) {
+            book.classList.remove("open");
+            button.textContent = "Open Book";
+          } else {
+            book.classList.add("open");
+            button.textContent = "Close Book";
+          }
+        });
+    </script>
+  </body>
+</html>
